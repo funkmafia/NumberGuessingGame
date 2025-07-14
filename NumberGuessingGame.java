@@ -4,15 +4,12 @@ import java.util.Random;
 public class NumberGuessingGame { // CLASS DECLARATION
     public static void main(String[] args) { // METHOD DECLARATION
         Scanner scanner = new Scanner(System.in); // OBJECT INSTANTIATION
-        playGame(scanner); // METHOD CALL
         String playAgain; // VARIABLE DECLARATION
         do {
+            playGame(scanner); // MOVE THE GAME CALL INSIDE THE LOOP
             System.out.println("Play again? Yes or No");
             playAgain = scanner.next().toLowerCase(); // METHOD CHAIN
-            if (playAgain.equals("Yes")) {
-                playGame(scanner);
-            }
-        } while (playAgain.equals("Yes"));
+        } while (playAgain.equals("yes"));
         scanner.close();
     }
 
@@ -28,6 +25,7 @@ public class NumberGuessingGame { // CLASS DECLARATION
         while (guess != secretNumber) {
             System.out.println("Enter your guess: ");
             guess = scanner.nextInt(); // VARIABLE ASSIGNMENT WITH METHOD CALL
+            scanner.nextLine(); // CLEARS LEFTOVER NEW LINE (NO MORE Y'S IN TERMINAL)
             attempts++; // INCREMENT STATEMENT
             if (guess < secretNumber) {
                 System.out.println("Too low! ");
@@ -37,6 +35,14 @@ public class NumberGuessingGame { // CLASS DECLARATION
                 System.out.println("Correct !! It took you " + attempts + " tries");
             }
         }
-        scanner.close();
     } // END OF PLAYGAME() METHOD
 } // END OF CLASS
+
+/*
+ * REMEMBER:
+ * - IF IT STATS WITH PUBLIC, STATIC, VOID = ITS A METHOD
+ * - IF IT STARTS WITH CLASS = ITS A CLASS
+ * - IF IT USES NEW = CREATES AN OBJECT
+ * - IF ITS SYSTEM.OUT.PRINTLN() - ITS AN OUTPUT STATEMENT
+ * - IF ITS IF, WHILE, DO, FOR - CONTROL FLOW
+ */

@@ -1,5 +1,9 @@
 # Number Guessing Game in Java
 
+![Java](https://img.shields.io/badge/Java-17-blue?logo=java)
+![License](https://img.shields.io/badge/license-MIT-green)
+![Status](https://img.shields.io/badge/status-Completed-brightgreen)
+
 This is a simple number guessing game I built while learning Java.
 
 The computer picks a random number between 1 and 100. The player has to guess the number. After each guess it tells you if you are too high or too low.
